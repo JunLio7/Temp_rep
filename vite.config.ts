@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -10,8 +10,8 @@ export default defineConfig({
     target: 'es2022',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        styleGuide: resolve(__dirname, '_dev/style-guide.html'),
+        main: fileURLToPath(new URL('./index.html', import.meta.url)),
+        styleGuide: fileURLToPath(new URL('./_dev/style-guide.html', import.meta.url)),
       },
     },
   },
