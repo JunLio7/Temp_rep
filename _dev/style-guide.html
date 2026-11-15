@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OJTFlow — Dev Style Guide (Phase 3 Verification)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../src/styles/tokens.css" />
+    <link rel="stylesheet" href="../src/styles/reset.css" />
+    <link rel="stylesheet" href="../src/styles/layout.css" />
+    <link rel="stylesheet" href="../src/styles/components.css" />
+    <style>
+      .sg-wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: var(--space-8) var(--space-6);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+      }
+      .sg-swatches {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: var(--space-4);
+      }
+      .sg-swatch {
+        border: 1px solid var(--color-border-default);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background: var(--color-bg-surface);
+      }
+      .sg-swatch_color {
+        height: 56px;
+      }
+      .sg-swatch_meta {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--text-xs);
+      }
+      .sg-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--space-3);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="sg-wrap">
+      <header class="page-header">
+        <div class="page-header_info">
+          <h1 class="page-header_title">OJTFlow Design System &amp; Style Guide</h1>
+          <p class="page-header_description">
+            Phase 3 token and component verification sheet (tokens.css, reset.css, layout.css, components.css).
+          </p>
+        </div>
+        <div class="page-header_actions">
+          <span class="badge badge--primary">Phase 3 Verification</span>
+        </div>
+      </header>
+
+      <!-- 1. Color Tokens -->
+      <section class="card">
+        <div class="card_header">
+          <h2 class="card_title">1. Color Tokens (G-23 Resolved)</h2>
+        </div>
+        <div class="card_body">
+          <div class="sg-swatches">
+            <div class="sg-swatch">
+              <div class="sg-swatch_color" style="background: var(--color-primary);"></div>
+              <div class="sg-swatch_meta"><strong>Primary</strong><br />#860018</div>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch_color" style="background: var(--color-primary-hover);"></div>
+              <div class="sg-swatch_meta"><strong>Primary Hover</strong><br />#B00D26</div>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch_color" style="background: var(--color-success);"></div>
+              <div class="sg-swatch_meta"><strong>Success</strong><br />#198754</div>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch_color" style="background: var(--color-warning);"></div>
+              <div class="sg-swatch_meta"><strong>Warning</strong><br />#D97706</div>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch_color" style="background: var(--color-danger);"></div>
+              <div class="sg-swatch_meta"><strong>Danger</strong><br />#DC3545</div>
+            </div>
+            <div class="sg-swatch">
+              <div class="sg-swatch_color" style="background: var(--color-info);"></div>
+              <div class="sg-swatch_meta"><strong>Info</strong><br />#0D6EFD</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Buttons & Badges -->
+      <section class="card">
+        <div class="card_header">
+          <h2 class="card_title">2. Buttons &amp; Semantic Badges</h2>
+        </div>
+        <div class="card_body" style="display: flex; flex-direction: column; gap: var(--space-4);">
+          <div class="sg-row">
+            <button type="button" class="btn btn--primary">Primary Action</button>
+            <button type="button" class="btn btn--secondary">Secondary Action</button>
+            <button type="button" class="btn btn--ghost">Ghost Button</button>
+            <button type="button" class="btn btn--danger">Danger Action</button>
+            <button type="button" class="btn btn--primary btn--sm">Small Primary</button>
+          </div>
+          <div class="sg-row">
+            <span class="badge badge--neutral">Draft / Pending</span>
+            <span class="badge badge--primary">Active OJT</span>
+            <span class="badge badge--success">Verified / Approved</span>
+            <span class="badge badge--warning">For Revision</span>
+            <span class="badge badge--danger">Rejected / Missing</span>
+            <span class="badge badge--info">Under Review</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. KPI Cards & Progress -->
+      <section class="grid-kpi" style="margin-bottom: 0;">
+        <div class="kpi-card">
+          <div class="kpi-card_top">
+            <span class="kpi-card_label">Requirements Verified</span>
+            <span class="kpi-card_icon">6/8</span>
+          </div>
+          <div class="kpi-card_value">75%</div>
+          <div class="progress">
+            <div class="progress_bar" style="width: 75%;"></div>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-card_top">
+            <span class="kpi-card_label">Applications Sent</span>
+            <span class="kpi-card_icon">04</span>
+          </div>
+          <div class="kpi-card_value">4</div>
+          <div class="kpi-card_meta">2 Shortlisted, 2 Pending</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-card_top">
+            <span class="kpi-card_label">Partner Companies</span>
+            <span class="kpi-card_icon">28</span>
+          </div>
+          <div class="kpi-card_value">28</div>
+          <div class="kpi-card_meta">Active MOA Verified</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-card_top">
+            <span class="kpi-card_label">Deployment Status</span>
+            <span class="kpi-card_icon">OK</span>
+          </div>
+          <div class="kpi-card_value">Ready</div>
+          <div class="kpi-card_meta">Endorsement Cleared</div>
+        </div>
+      </section>
+
+      <!-- 4. Form Controls & Data Table -->
+      <section class="grid-2col" style="margin-bottom: 0;">
+        <div class="card">
+          <div class="card_header">
+            <h2 class="card_title">4. Form Controls</h2>
+          </div>
+          <div class="card_body">
+            <div class="form-group">
+              <label class="form-label" for="sg-input">Student ID / SR-Code <span class="form-label_required">*</span></label>
+              <input id="sg-input" class="form-control" type="text" value="23-00412" />
+              <span class="form-hint">Format: YY-XXXXX</span>
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" for="sg-select">OJT Track</label>
+              <select id="sg-select" class="form-control">
+                <option>BSIT — Business Analytics</option>
+                <option>BSIT — Service Management</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card_header">
+            <h2 class="card_title">5. Data Table Sample</h2>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Requirement</th>
+                  <th>Status</th>
+                  <th>Updated</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Endorsement Letter</td>
+                  <td><span class="badge badge--success">Verified</span></td>
+                  <td>Nov 12, 2026</td>
+                </tr>
+                <tr>
+                  <td>Parent Consent Form</td>
+                  <td><span class="badge badge--warning">For Revision</span></td>
+                  <td>Nov 14, 2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
