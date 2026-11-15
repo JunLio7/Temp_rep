@@ -1,12 +1,19 @@
+/* ==========================================================================
+   OJTFlow Application Bootstrap (src/main.ts)
+   Loads base CSS token/layout/component layers and mounts client router
+   ========================================================================== */
+
+import './styles/tokens.css';
+import './styles/reset.css';
+import './styles/layout.css';
+import './styles/components.css';
+
+import { initRouter } from './router';
+
 const appRoot = document.querySelector<HTMLDivElement>('#app');
 
 if (!appRoot) {
   throw new Error('Root element #app was not found in index.html.');
 }
 
-appRoot.innerHTML = `
-  <main style="font-family: 'Inter', sans-serif; padding: 2rem;">
-    <h1>OJTFlow Frontend</h1>
-    <p>Phase 1 foundation initialized. Ready for Phase 2 design tokens.</p>
-  </main>
-`;
+initRouter(appRoot);
